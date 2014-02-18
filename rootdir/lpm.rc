@@ -45,21 +45,27 @@ on boot
     class_start default
 
 service debuggerd /system/bin/debuggerd
+    disabled # by Mer
 
 service ueventd /sbin/ueventd
     critical
+    disabled # by Mer
 
 service console /system/bin/sh
     console
+    disabled # by Mer
 
 service playlpm /system/bin/playlpm
     user root
+    disabled # by Mer
 
 service immvibed /system/bin/immvibed
     oneshot
+    disabled # by Mer
 
 service lpmkey /system/bin/lpmkey
     user root
+    disabled # by Mer
 
 # adbd is controlled by the persist.service.adb.enable system property
 service adbd /sbin/adbd

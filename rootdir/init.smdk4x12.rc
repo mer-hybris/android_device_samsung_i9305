@@ -1,4 +1,5 @@
-import init.smdk4x12.usb.rc
+# Mer ignores this
+# import init.smdk4x12.usb.rc
 import init.bt.rc
 
 on init
@@ -49,7 +50,8 @@ on fs
 
 #MDM requirement
     mkdir /firmware 0771 system system
-    mount vfat /dev/block/mmcblk0p10 /firmware ro shortname=lower fmask=0133,dmask=0022
+# Mer handles this
+#    mount vfat /dev/block/mmcblk0p10 /firmware ro shortname=lower fmask=0133,dmask=0022
     chown system system /tombstones
     chmod 0775 /tombstones
     mkdir /tombstones/modem 0775 system system
@@ -417,7 +419,8 @@ on post-fs-data
     setprop vold.post_fs_data_done 1
 
 on boot
-    mount debugfs /sys/kernel/debug /sys/kernel/debug
+#  Mer handles this
+#    mount debugfs /sys/kernel/debug /sys/kernel/debug
 
     setprop ro.build.product smdk4x12
     setprop ro.product.device smdk4x12
