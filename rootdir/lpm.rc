@@ -1,5 +1,6 @@
 on early-init
-    start ueventd
+# Mer uses udev
+#    start ueventd
 
 on init
     export PATH /sbin:/vendor/bin:/system/sbin:/system/bin:/system/xbin
