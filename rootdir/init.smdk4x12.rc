@@ -491,14 +491,12 @@ service at_distributor /system/bin/at_distributor
     class main
     user root
     group radio log
-    disabled # by Mer
 
 # diag app for cp uart
 service diag_uart_log /system/bin/diag_uart_log
     class main
     user root
     group radio
-    disabled # by Mer
 
 #service cpboot-daemon /sbin/cbd -d -p 10
 #    class main
@@ -569,56 +567,47 @@ service iprenew_bnep0 /system/bin/dhcpcd -n
 service macloader /system/bin/macloader
     class main
     oneshot
-    disabled # by Mer
 
 service netmgrd /system/bin/netmgrd
     class late_start
-    disabled # by Mer
 
 service SMD-daemon /system/bin/smdexe
     class main
     user root
     group system radio inet net_raw
-    disabled # by Mer
 
 service qc_kickstart /system/bin/qcks s
     class core
     user root
     group radio cache inet misc audio sdcard_rw log
-    disabled # by Mer
 
 service secril-daemon /system/bin/sec-ril
     class main
     user root
     group radio cache inet misc audio sdcard_rw qcom_diag log
-    disabled # by Mer
 
 #For EncryptionMode - remove disabled, Modify class main
 service qmiproxy /system/bin/qmiproxy
     class main
     user radio
     group radio gps
-    disabled # by Mer
 
 service qmuxd /system/bin/qmuxd
     class main
     user root
     group radio log audio bluetooth gps log
-    disabled # by Mer
 
 #start GNSS/Sensor interface daemon
 service gsiff_daemon /system/bin/gsiff_daemon
     class late_start
     user system
     group qcom_oncrpc gps
-    disabled # by Mer
 
 # TVout
 service TvoutService_C /system/bin/bintvoutservice
     class main
     user system
     group graphics
-    disabled # by Mer
 
 on property:ro.tvout.enable=false
     stop TvoutService_C
